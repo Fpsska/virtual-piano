@@ -7,49 +7,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <title>Virtual Piano</title>
 </head>
 
 <body>
 
-<div class="page container">
+
     <header class="header">
+        <button class="btn--fullscreen">GO <br> FULL</button>
         <h1 class="header__title">Virtual Piano</h1>
-    </header> <!--/.header-->
-
-    <main class="main">
-        <div class="piano">
-            <div class="light-stage">
-                <div class="piano__key light-stage__key" data-letter="D" data-note="c"></div> 
-                <div class="piano__key light-stage__key" data-letter="F" data-note="d"></div>
-                <div class="piano__key light-stage__key" data-letter="G" data-note="e"></div>
-                <div class="piano__key light-stage__key" data-letter="H" data-note="f"></div>
-                <div class="piano__key light-stage__key" data-letter="J" data-note="g"></div>
-                <div class="piano__key light-stage__key" data-letter="K" data-note="a"></div>
-                <div class="piano__key light-stage__key" data-letter="L" data-note="b"></div>
+    </header> 
+    <div class="header-mobile">
+        <button class="btn--fullscreen">GO <br> FULL</button>
+        <h1 class="header__title">Virtual Piano</h1>
+    </div>
+    <!--/.header-->
+    <div class="container">
+        <main class="main">
+            <div class="piano">
+                <div class="light-stage">
+                    <div class="piano__key light-stage__key" data-letter="D" data-note="c"></div>
+                    <div class="piano__key light-stage__key" data-letter="F" data-note="d"></div>
+                    <div class="piano__key light-stage__key" data-letter="G" data-note="e"></div>
+                    <div class="piano__key light-stage__key" data-letter="H" data-note="f"></div>
+                    <div class="piano__key light-stage__key" data-letter="J" data-note="g"></div>
+                    <div class="piano__key light-stage__key" data-letter="K" data-note="a"></div>
+                    <div class="piano__key light-stage__key" data-letter="L" data-note="b"></div>
+                </div>
+                <div class="dark-stage">
+                    <div class="piano__key dark-stage__key" data-letter="R" data-note="c♯"></div>
+                    <div class="piano__key dark-stage__key" data-letter="T" data-note="d♯"></div>
+                    <div class="piano__key dark-stage__key none"></div>
+                    <div class="piano__key dark-stage__key" data-letter="U" data-note="f♯"></div>
+                    <div class="piano__key dark-stage__key" data-letter="I" data-note="g♯"></div>
+                    <div class="piano__key dark-stage__key" data-letter="O" data-note="a♯"></div>
+                </div>
             </div>
-            <div class="dark-stage">
-                <div class="piano__key dark-stage__key" data-letter="R" data-note="c♯"></div>
-                <div class="piano__key dark-stage__key" data-letter="T" data-note="d♯"></div>
-                <div class="piano__key dark-stage__key none"></div> 
-                <div class="piano__key dark-stage__key" data-letter="U" data-note="f♯"></div>
-                <div class="piano__key dark-stage__key" data-letter="I" data-note="g♯"></div>
-                <div class="piano__key dark-stage__key" data-letter="O" data-note="a♯"></div>
+
+            <div class="buttons">
+                <button class="btn btn--notes">Notes</button>
+                <button class="btn btn--letters">Letters</button>
             </div>
-        </div>
+        </main>
+        <!--/.main-->
 
-        <div class="buttons">
-            <button class="btn btn--notes">Notes</button>
-            <button class="btn btn--letters">Letters</button>
-        </div>
+    </div>
 
-        <button class="btn--fullscreen">GO FULL</button>
-    </main> <!--/.main-->
-
-</div>
-
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.min.js"></script>
 </body>
 
 </html>
