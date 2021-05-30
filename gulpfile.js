@@ -23,7 +23,6 @@ function browsersync() {  // live update
     });
 }
 
-
 function images() {
     return src("app/assets/img/**/*")
         .pipe(imagemin([
@@ -59,17 +58,25 @@ function styles() {  /*КОМПИЛЯЦИЯ scss -> style.min.css*/
         .pipe(dest("app/css"));
 }
 
+function audio() {  
+    return src("app/assets/audio/**/*.mp3")
+        .pipe(dest("app/assets/audio"));
+}
+
 function watching() {
     watch(["app/assets/scss/**/*.scss"], styles);
     watch(["app/assets/js/**/*.js", "!app/assets/js/main.min.js"], scripts);
+    watch(["app/assets/audio/**/*.mp3"], audio);
     watch(["app/*.html"]).on("change", browserSync.reload);
 }
+
 
 function build() {
     return src([
         "app/*.html",
         "app/css/style.min.css",
-        "app/assets/js/main.min.js"
+        "app/assets/js/main.min.js",
+        "app/assets/audio/**/*.mp3"
     ], { base: "app" })
         .pipe(dest([
             "dist"
@@ -88,4 +95,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, scripts, audio, browsersync, watching);
